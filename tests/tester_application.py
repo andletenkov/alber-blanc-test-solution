@@ -111,6 +111,8 @@ def test_add_user_with_randomly_generated_data(app, data):
     param({'method': 'add', 'name': random_string(), 'surname': None}, id='invalid \'surname\' format'),
     param({'method': 'delete', 'name': random_string(), 'surname': random_string(), 'phone': 123, 'age': 1},
           id='invalid \'phone\' format'),
+    param({'method': 'add', 'name': random_string(), 'surname': random_string(), 'phone': random_string(), 'age': 1},
+          id='no digit \'phone\' value'),
     param({'method': 'update', 'name': random_string(), 'surname': random_string(), 'phone': '1', 'age': '1'},
           id='invalid \'age\' format'),
     param({'method': 'add', 'name': '', 'surname': '', 'phone': '', 'age': 0}, id='empty values'),
