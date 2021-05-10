@@ -16,6 +16,7 @@ docker-compose up --exit-code-from tests
 * при вызове `update` значение `age` пользователя остается неизменным (test_update_user);
 * приложение не валидирует пустые значения переданных полей (test_invalid_data[empty values]);
 * приложение не валидирует отрицательное значение `age` (test_invalid_data[negative age]);
+* приложение не валидирует некорректное значение `phone` (буквы, знаки пунктуации и т.п.) – формально багом не является, так как в спецификации это не описано, но по логике – да. (test_invalid_data[no digit 'phone' value]);
 * приложение падает с ошибкой `*** buffer overflow detected ***: terminated` при передаче слишком длинного (~1000
   символов) сообщения (test_invalid_data[payload length overflow]).
 
